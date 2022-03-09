@@ -139,6 +139,13 @@ function collectStar(player, star) {
   score += 1;
   scoreText.setText('Score:' + score);
 
+  let starCount = 0;
+
+  if (starCount == 5) {
+    starCount = 0
+    starCount += 1;
+  }
+
   if (stars.countActive(true) === 0) {
     stars.children.iterate(function (child) {
       child.enableBody(true, child.x, 0, true, true);
@@ -151,7 +158,7 @@ function collectStar(player, star) {
     bomb.setVelocity(Phaser.Math.Between(-200, 200), 20)
   }
   var color = new Phaser.Display.Color();
-  player.setTint(color.random(50), color.random(50), color.random(50), color.random(50))
+  player.setTint(color.random(50), color.random(50), color.random(50),)
 
   var scaleX = frameWidth + 0.10;
   var scaleY = frameHeight + 0.10;
