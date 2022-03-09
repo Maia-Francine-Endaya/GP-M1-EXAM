@@ -139,11 +139,12 @@ function collectStar(player, star) {
   score += 1;
   scoreText.setText('Score:' + score);
 
-  let starCount = 0;
+  //Keeps track of the amount of the stars the player collects
+  var starCount = + 1;
 
+  //If Starcount reaches 5, it will reset the counter.
   if (starCount == 5) {
     starCount = 0
-    starCount += 1;
   }
 
   if (stars.countActive(true) === 0) {
@@ -160,9 +161,11 @@ function collectStar(player, star) {
   var color = new Phaser.Display.Color();
   player.setTint(color.random(50), color.random(50), color.random(50),)
 
+  //Variables for increase of width and height of the sprite
   var scaleX = frameWidth + 0.10;
   var scaleY = frameHeight + 0.10;
 
+  //If starcount reaches 5, the player sprite size with increase
   if (starCount == 5) {
     player.scale.setTo(scaleX, scaleY)
   }
