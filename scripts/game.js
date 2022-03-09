@@ -1,4 +1,4 @@
-const { Phaser } = require("./phaser.min");
+// const { Phaser } = require("./phaser.min");
 
 var config = {
   type: Phaser.AUTO,
@@ -25,6 +25,7 @@ var stars;
 var score = 0;
 var scoreText;
 var bombs;
+var gameOver = false;
 var game = new Phaser.Game(config);
 
 function preload() {
@@ -149,6 +150,8 @@ function collectStar(player, star) {
     bomb.setCollideWorldBounds(true);
     bomb.setVelocity(Phaser.Math.Between(-200, 200), 20)
   }
+  var color = new Phaser.Display.Color();
+  player.setTint(color.random(50), color.random(50), color.random(50), color.random(50))
 }
 
 function hitBomb(player, bomb) {
