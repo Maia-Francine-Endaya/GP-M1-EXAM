@@ -152,6 +152,13 @@ function collectStar(player, star) {
   }
   var color = new Phaser.Display.Color();
   player.setTint(color.random(50), color.random(50), color.random(50), color.random(50))
+
+  var scaleX = frameWidth + 0.10;
+  var scaleY = frameHeight + 0.10;
+
+  if (starCount == 5) {
+    player.scale.setTo(scaleX, scaleY)
+  }
 }
 
 function hitBomb(player, bomb) {
